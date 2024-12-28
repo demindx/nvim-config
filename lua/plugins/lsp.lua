@@ -54,6 +54,15 @@ return {
 				--  For example, in C this would take you to the header.
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
+				map("[d", function()
+					vim.diagnostic.goto_prev()
+					vim.diagnostic.open_float()
+				end, "diagnostic goto prev")
+
+				map("]d", function()
+					vim.diagnostic.goto_next()
+					vim.diagnostic.open_float()
+				end, "diagnostic goto next")
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
 					local highlight_augroup = vim.api.nvim_create_augroup("nvim-lsp-highlight", { clear = false })
@@ -92,8 +101,28 @@ return {
 		local servers = {
 			clangd = { settings = {} },
 			ts_ls = { settings = {} },
-			ruff = { settings = {} },
-			pylsp = { settings = {} },
+			ruff = {
+				on_attach = function(client, bufnr)
+					if client.name == "ruff" then
+						client.server_capabilities.hoverProvider = false
+					end
+				end,
+				settings = {
+					args = {},
+				},
+			},
+			pyright = {
+				settings = {
+					pyright = {
+						disableOrganizeImports = true,
+					},
+					python = {
+						analysis = {
+							ignore = { "*" },
+						},
+					},
+				},
+			},
 			texlab = { settings = {} },
 			volar = { settings = {} },
 			cssls = { settings = {} },

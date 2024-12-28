@@ -1,4 +1,4 @@
-vim.opt.guicursor = "n-v-c:block,i:block-blinkwait700-blinkon400-blinkoff250"
+vim.opt.guicursor = "n-v-c:block,i:block-blinkwait700-blinkon400-blinkoff400"
 vim.opt.swapfile = false
 vim.g.scrolloff = 15
 vim.g.mapleader = " "
@@ -24,9 +24,9 @@ end)
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
 
 if vim.g.neovide then
-	-- vim.o.guifont = "Hurmit Nerd Font:h14" -- text below applies for VimScript
+	-- vim.o.guifont = "Hurmit Nerd Font:h18" -- text below applies for VimScript
 	-- vim.o.guifont = "BigBlueTermPlus Nerd Font:h14"
-	-- vim.o.guifont = "FiraCode Nerd Font:h15"
+	vim.o.guifont = "FiraCode Nerd Font:h20"
 	vim.g.neovide_transparency = 1
 	vim.g.neovide_hide_mouse_when_typing = true
 	vim.g.neovide_cursor_animation_length = 0.0
