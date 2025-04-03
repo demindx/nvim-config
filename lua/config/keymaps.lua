@@ -9,3 +9,5 @@ vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
 
 -- global
 vim.keymap.set("n", "<ESC><ESC>", ":nohlsearch<cr>", { desc = "off search highlight" })
+
+vim.keymap.set("n", "<leader>ft", ":TodoTelescope<cr>", { desc = "[F]ind [T]odo" })

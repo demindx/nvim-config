@@ -123,6 +123,7 @@ return {
 					},
 				},
 			},
+			arduino_language_server = { settings = {} },
 			texlab = { settings = {} },
 			volar = { settings = {} },
 			cssls = { settings = {} },

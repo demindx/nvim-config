@@ -1,5 +1,26 @@
 return {
 	{
+		"lervag/vimtex",
+		lazy = false, -- we don't want to lazy load VimTeX
+		-- tag = "v2.15", -- uncomment to pin to a specific release
+		init = function()
+			-- VimTeX configuration goes here, e.g.
+			vim.g.vimtex_view_method = "zathura"
+		end,
+	},
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
+	{
+		"RaafatTurki/hex.nvim",
+		config = function()
+			require("hex").setup()
+		end,
+	},
+	{
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -39,4 +60,6 @@ return {
 			},
 		},
 	},
+
+	{ "andweeb/presence.nvim", lazy = false },
 }
