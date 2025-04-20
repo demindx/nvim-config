@@ -13,9 +13,9 @@ return {
 			local dap = require("dap")
 			local ui = require("dapui")
 
-			require("dapui").setup()
-			require("dap-go").setup()
-			require("dap-lldb").setup()
+			ui.setup({})
+			require("dap-go").setup({})
+			require("dap-lldb").setup({})
 
 			require("nvim-dap-virtual-text").setup({})
 
