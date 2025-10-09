@@ -47,7 +47,7 @@ return {
 	},
 
 	"tpope/vim-sleuth",
-	"mattn/emmet-vim",
+	{ "mattn/emmet-vim", lazy = false, filetype = "tmpl" },
 
 	{ "stevearc/dressing.nvim", opts = {} },
 

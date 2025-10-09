@@ -18,6 +18,8 @@ vim.opt.scrolloff = 10
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
+vim.o.conceallevel = 2
+
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
@@ -25,10 +27,10 @@ end)
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
 
 if vim.g.neovide then
-	-- vim.o.guifont = "Hurmit Nerd Font:h18" -- text below applies for VimScript
+	vim.o.guifont = "Hurmit Nerd Font:h18" -- text below applies for VimScript
 	-- vim.o.guifont = "BigBlueTermPlus Nerd Font:h14"
-	vim.o.guifont = "FiraCode Nerd Font:h20"
-	vim.g.neovide_transparency = 1
+	-- vim.o.guifont = "FiraCode Nerd Font:h20"
+	-- vim.g.neovide_transparency = 1
 	vim.g.neovide_hide_mouse_when_typing = true
 	vim.g.neovide_cursor_animation_length = 0.0
 	vim.g.neovide_cursor_trail_size = 0.0

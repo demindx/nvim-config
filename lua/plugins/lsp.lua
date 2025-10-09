@@ -55,13 +55,11 @@ return {
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 				map("[d", function()
-					vim.diagnostic.goto_prev()
-					vim.diagnostic.open_float()
+					vim.diagnostic.jump({ count = 1, float = true })
 				end, "diagnostic goto prev")
 
 				map("]d", function()
-					vim.diagnostic.goto_next()
-					vim.diagnostic.open_float()
+					vim.diagnostic.jump({ count = -1, float = true })
 				end, "diagnostic goto next")
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
@@ -99,32 +97,35 @@ return {
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		local servers = {
-			clangd = { settings = {} },
-			ts_ls = { settings = {} },
-			ruff = {
-				on_attach = function(client, bufnr)
-					if client.name == "ruff" then
-						client.server_capabilities.hoverProvider = false
-					end
-				end,
-				settings = {
-					args = {},
-				},
+			basedpyright = {
+				settings = {},
 			},
-			pyright = {
-				settings = {
-					pyright = {
-						disableOrganizeImports = true,
-					},
-					python = {
-						analysis = {
-							ignore = { "*" },
-						},
-					},
-				},
-			},
+			-- ruff = {
+			-- 	on_attach = function(client, bufnr)
+			-- 		if client.name == "ruff" then
+			-- 			client.server_capabilities.hoverProvider = false
+			-- 		end
+			-- 	end,
+			-- 	settings = {
+			-- 		args = {},
+			-- 	},
+			-- },
+			-- pyright = {
+			-- 	settings = {
+			-- 		pyright = {
+			-- 			disableOrganizeImports = true,
+			-- 		},
+			-- 		python = {
+			-- 			analysis = {
+			-- 				ignore = { "*" },
+			-- 			},
+			-- 		},
+			-- 	},
+			-- },
 			arduino_language_server = { settings = {} },
 			texlab = { settings = {} },
+			clangd = { settings = {} },
+			ts_ls = { settings = {} },
 			volar = { settings = {} },
 			cssls = { settings = {} },
 			lua_ls = {
@@ -148,9 +149,11 @@ return {
 		require("mason-lspconfig").setup({
 			handlers = {
 				function(server_name)
+					-- if server_name ~= "jdtls" then
 					local server = servers[server_name] or {}
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 					require("lspconfig")[server_name].setup(server)
+					-- end
 				end,
 			},
 		})

@@ -1,11 +1,24 @@
 return {
 	{
+		"xiyaowong/transparent.nvim",
+		lazy = false,
+	},
+	{
 		"metalelf0/black-metal-theme-neovim",
 		lazy = false,
 		priority = 1000,
 	},
-
-	{ "joshdick/onedark.vim", name = "onedark", priority = 1000 },
+	{
+		"navarasu/onedark.nvim",
+		-- priority = 1000, -- make sure to load this before all the other start plugins
+		-- config = function()
+		-- 	require("onedark").setup({
+		-- 		style = "darker",
+		-- 	})
+		-- 	-- Enable theme
+		-- 	require("onedark").load()
+		-- end,
+	},
 
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
@@ -31,7 +44,7 @@ return {
 	{
 		"blazkowolf/gruber-darker.nvim",
 		config = function()
-			vim.cmd([[ colorscheme  vscode]])
+			vim.cmd([[ colorscheme  gruvbox]])
 		end,
 	},
 }
