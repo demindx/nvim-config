@@ -44,6 +44,7 @@ return {
 		"build.gradle",
 		"build.gradle.kts",
 	},
+	filetypes = {"java"},
 	settings = {
 		java = {
 			home = java25,
