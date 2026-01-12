@@ -6,7 +6,7 @@ api.nvim_create_autocmd("TextYankPost", {
 
 });
 
-api.nvim_create_autocmd('FileType', {
+api.nvim_create_autocmd('BufReadPost', {
   pattern = "*",
   callback = function() vim.treesitter.start() end,
 });

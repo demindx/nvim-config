@@ -26,4 +26,14 @@ vim.keymap.set("v", "<Down>", ":<C-u>echoe 'Get off my lawn!'<CR>")
 vim.keymap.set("v", "<Left>", ":<C-u>echoe 'Get off my lawn!'<CR>")
 vim.keymap.set("v", "<Right>", ":<C-u>echoe 'Get off my lawn!'<CR>")
 
+
+
+vim.keymap.set("n", "<leader>z", function ()
+	if vim.wo.foldmethod == "indent" then
+		vim.wo.foldmethod = "syntax"
+	else
+		vim.wo.foldmethod = "indent"
+	end
+end)
+
 -- vim.keymap.set("n", "<leader>e", ":30 Lexplore<cr>")

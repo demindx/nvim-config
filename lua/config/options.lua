@@ -8,18 +8,18 @@ vim.g.scrolloff = 15
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
 vim.opt.relativenumber = true
+-- vim.opt.foldmethod = "indent"
 
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.termguicolors = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.termguicolors = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.o.conceallevel = 2
+vim.opt.conceallevel = 2
 
 vim.diagnostic.config({
-	-- virtual_lines = true,
 	virtual_text = true,
 	underline = true,
 	update_in_insert = false,
