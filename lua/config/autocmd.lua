@@ -8,5 +8,7 @@ api.nvim_create_autocmd("TextYankPost", {
 
 api.nvim_create_autocmd('BufReadPost', {
   pattern = "*",
-  callback = function() vim.treesitter.start() end,
+  callback = function()
+		vim.treesitter.start()
+	end,
 });

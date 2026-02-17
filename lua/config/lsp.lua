@@ -44,6 +44,7 @@ local capabilities = {
 }
 
 capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+-- capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 
 vim.lsp.config("*", {
 	capabilities = capabilities,
@@ -57,6 +58,12 @@ local servers = {
 	"luals",
 	"clangd",
 	"texlab",
+	"vls",
+	"css",
+	"vtsls",
+	"html",
+	"emmet",
+	"gopls"
 }
 
 vim.lsp.enable(servers)
