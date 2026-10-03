@@ -1,4 +1,4 @@
 return {
 	cmd = { "vscode-html-language-server", "--stdio" },
-	filetypes = {"html", "vue"}
+	filetypes = {"html", "vue", "http"}
 }

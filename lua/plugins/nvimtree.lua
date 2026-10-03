@@ -9,6 +9,22 @@ return {
 			"3rd/image.nvim",
 		},
 
+		opts = {
+			-- filesystem = {
+			-- 	filtered_items = {
+			-- 		hide_dotfiles = false,
+			-- 	},
+			-- 	follow_current_file = true,
+			-- 	group_empty_dirs = true,
+			-- },
+			-- renderers = {
+			-- 	directory = {
+			-- 		args = { "indent", "icon", "current_dir" },
+			-- 		highlight = "NeoTreeDirectoryName",
+			-- 	}
+			-- },
+		},
+
 		keys = {
 			{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File browser" },
 		},

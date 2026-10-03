@@ -1,9 +1,11 @@
 vim.g.mapleader = " "
 
-vim.opt.guicursor = "n-v-c:block,i:block-blinkwait700-blinkon400-blinkoff400"
+-- vim.opt.guicursor = "n-v-c:block,i:block-blinkwait700-blinkon400-blinkoff400"
 
 vim.opt.swapfile = false
 vim.g.scrolloff = 15
+
+vim.g.c_syntax_for_h = 1
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
@@ -53,3 +55,9 @@ if vim.g.neovide then
 	vim.g.neovide_cursor_animation_length = 0.0
 	vim.g.neovide_cursor_trail_size = 0.0
 end
+
+vim.env.PAGER = "cat"
+vim.env.PSQL_PAGER = "cat"
+-- Tell psql to run in quiet batch mode without interactive prompts
+vim.env.PGOPTIONS = "--client-min-messages=warning"
+

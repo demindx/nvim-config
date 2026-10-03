@@ -6,9 +6,9 @@ api.nvim_create_autocmd("TextYankPost", {
 
 });
 
-api.nvim_create_autocmd('BufReadPost', {
-  pattern = "*",
-  callback = function()
-		vim.treesitter.start()
-	end,
-});
+-- api.nvim_create_autocmd('BufReadPost', {
+--   pattern = "*",
+--   callback = function()
+-- 		vim.treesitter.start()
+-- 	end,
+-- });

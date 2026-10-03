@@ -35,7 +35,15 @@ return {
 		"-data",
 		workspace_dir,
 	},
-
+	handlers = {
+		["$/progress"] = function(_, result, ctx)
+			if result.value and result.value.kind == "end" and result.value.message then
+				if result.value.message:find("[Ee]rror") then
+					vim.notify(result.value.message, vim.log.levels.ERROR)
+				end
+			end
+		end,
+	},
 	root_markers = {
 		".git",
 		"mvnw",
@@ -44,13 +52,13 @@ return {
 		"build.gradle",
 		"build.gradle.kts",
 	},
-	filetypes = {"java"},
+	filetypes = { "java" },
 	settings = {
 		java = {
 			home = java25,
 			eclipse = { downloadSources = true },
 			configuration = {
-				updateBuildConfiguration = "automatic",
+				updateBuildConfiguration = "interactive",
 				runtimes = {
 					{
 						name = "JavaSE-11",

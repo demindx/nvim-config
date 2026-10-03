@@ -52,17 +52,35 @@ vim.lsp.config("*", {
 })
 
 local servers = {
-	"pyright",
+	-- math shit
+	"matlab",
+
+	-- db
+	"psql",
+
+	-- python
+	"basedpyright",
 	"ruff",
+
+	-- java shit
 	"jdtls",
+
+	-- lua
 	"luals",
+
+	-- C/C++
 	"clangd",
+
+	-- latex
 	"texlab",
+
+	-- web shit
 	"vls",
 	"css",
 	"vtsls",
 	"html",
 	"emmet",
+
 	"gopls"
 }
 

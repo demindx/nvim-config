@@ -1,7 +1,11 @@
 return {
 	{ "morhetz/gruvbox", },
 
-	{ "catppuccin/nvim",    name = "catppuccin" },
+	{ "NLKNguyen/papercolor-theme" },
+
+	{ "Koalhack/darcubox-nvim" },
+
+	{ "catppuccin/nvim",           name = "catppuccin" },
 
 	{ "Mofiqul/vscode.nvim" },
 
@@ -10,7 +14,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme vscode]])
+			vim.cmd([[colorscheme darcubox]])
 		end,
 	}
 }

@@ -26,6 +26,11 @@ vim.keymap.set("v", "<Down>", ":<C-u>echoe 'Get off my lawn!'<CR>")
 vim.keymap.set("v", "<Left>", ":<C-u>echoe 'Get off my lawn!'<CR>")
 vim.keymap.set("v", "<Right>", ":<C-u>echoe 'Get off my lawn!'<CR>")
 
+vim.keymap.set("n", "<leader>ma", ":make all<cr>", {desc = "[M]ake [A]ll"})
+
+vim.keymap.set("n", "<leader>tn", ":tabn<cr>", {desc = "[T]ab [N]ext"})
+vim.keymap.set("n", "<leader>tp", ":tabp<cr>", {desc = "[T]ab [P]revious"})
+vim.keymap.set("n", "<leader>tc", ":tabnew<cr>", {desc = "[T]ab [C] new"})
 
 
 vim.keymap.set("n", "<leader>z", function ()
